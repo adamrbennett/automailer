@@ -1,0 +1,15 @@
+version: '2.1'
+
+services:
+  automailer:
+    build:
+      context: .
+    command: test
+    environment:
+      - AWS_ACCESS_KEY_ID=${AWS_ACCESS_KEY_ID}
+      - AWS_SECRET_ACCESS_KEY=${AWS_SECRET_ACCESS_KEY}
+      - GITHUB_TOKEN=${GITHUB_TOKEN}
+    volumes:
+      - ./store:/app/store
+    extra_hosts:
+      - "api:172.17.0.1"

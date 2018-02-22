@@ -1,0 +1,27 @@
+{
+  "name": "automailer",
+  "version": "0.1.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "set -a; test -f ~/.docker-env && . ~/.docker-env; test -f .docker-env && . .docker-env; docker-compose up",
+    "test-down": "set -a; test -f ~/.docker-env && . ~/.docker-env; test -f .docker-env && . .docker-env; docker-compose down"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/adamrbennett/automailer.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/adamrbennett/automailer/issues"
+  },
+  "homepage": "https://github.com/adamrbennett/automailer#readme",
+  "dependencies": {
+    "aws-sdk": "^2.171.0",
+    "commander": "^2.12.2",
+    "newman": "^3.9.1",
+    "nodegit": "0.20.1",
+    "yamljs": "^0.3.0"
+  }
+}

@@ -1,0 +1,27 @@
+services:
+  sfi-msa-binding-xact:
+    # service repository URL where postman test resources are located
+    repositoryUrl: https://github.com/pointsource/sfi-msa-binding-xact
+
+    # repository path to the postman collection
+    collection: test/component/collections/test-binding-xact-component.postman_collection.json
+
+    # repository path to the postman environment
+    environment: test/component/env/test-component.postman_environment.json
+
+    # only run tests from this folder inside the collection
+    folder: Get status
+
+    # cloudwatch reporter publishes test metrics to AWS cloudwatch
+    reporters:
+      - cloudwatch
+
+    # cloudwatch reporter options
+    reporterOptions:
+      cloudwatch:
+        service: sfi-msa-binding-xact
+    
+    # override variables in the environment file
+    overrides:
+      environment:
+        binding_xact_url: http://api
